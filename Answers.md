@@ -1,0 +1,4 @@
+1) The relationship between the "Product" and "Product_Category" entities is a many-to-one relationship. The MongoDB schema is established through references. Each document in the "Product" collection contains a field called "category_id", which holds the ObjectId of the corresponding document in the "Product_Category" collection. This relationship indicates that each product belongs to a specific product category.
+
+
+2) To ensure that each product in the "Product" table has a valid category assigned to it, you can enforce referential integrity programmatically. Before inserting or updating a product document in the "Product" collection, you can check whether the specified "category_id" exists in the "Product_Category" collection. If the category exists, the operation can proceed; otherwise, it should be rejected or handled accordingly.  
